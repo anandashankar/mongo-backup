@@ -1,0 +1,4 @@
+npm i node-cron
+mongodump --db=dbname --archive=./dbname.gzip --gzip
+mongorestore --db=dbname --archive=dbname.gzip --gzip
+cron schedule - At 22:00 on every day-of-week from Monday through Friday.
