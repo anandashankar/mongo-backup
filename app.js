@@ -15,11 +15,7 @@ Using mongorestore - without any args:
 const DB_NAME = 'harvesterapp';
 const ARCHIVE_PATH = path.join(__dirname, 'public', `${DB_NAME}.gzip`);
 
-// 1. Cron expression for every 5 seconds - */5 * * * * *
-// 2. Cron expression for every night at 00:00 hours (0 0 * * * )
-// Note: 2nd expression only contains 5 fields, since seconds is not necessary
-
-// Scheduling the backup every 5 seconds (using node-cron)
+// cron schedule - At 22:00 on every day-of-week from Monday through Friday.
 cron.schedule('0 22 * * 1-5', () => backupMongoDB());
 
 backupMongoDB();
